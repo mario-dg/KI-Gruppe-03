@@ -20,6 +20,10 @@ The last row of the input data is adjusted to use the values of the permutation.
     
     All columns that should be taken from the original data (from lk_data) have the value -1.
     
+@return
+    type:  numpy ndarray
+    shape: 6
+    
 '''
 def make_prediction(lk_df, permutation):
     last_row = lk_df.iloc[-1]
