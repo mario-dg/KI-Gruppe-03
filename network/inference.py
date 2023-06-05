@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 from tqdm import tqdm
 from sklearn.preprocessing import MinMaxScaler
-from utils import MEASURES_COLUMNS, get_test_dataframe
+from utils import MEASURES_COLUMNS, get_test_dataframe, get_test_data
 
 
 MODEL = "models/test_model.h5"
@@ -132,10 +132,19 @@ def make_prediction(lk_df, permutation, model=None):
     return prediction
 
 
+RUN_PERMUTATIONS = True
+
 if __name__ == "__main__":
-    lk_df = get_test_dataframe()
-    results = run_permutations(lk_df, random.sample(MEASURES_COLUMNS, 4))
-    for r in results:
-        print(r)
-    plt.plot(results[:5])
-    plt.show()
+    if RUN_PERMUTATIONS:
+        lk_df = get_test_dataframe()
+        results = np.asarray(run_permutations(lk_df, random.sample(MEASURES_COLUMNS, 4)))
+        for r in results:
+            print(r)
+        plt.plot(np.transpose(results[0:5, :]))
+        plt.show()
+    else:
+        lk_df, permutation = get_test_data()
+        result = make_prediction(lk_df, permutation)
+        print(result)
+        plt.plot(result)
+        plt.show()
