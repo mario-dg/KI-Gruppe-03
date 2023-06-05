@@ -34,3 +34,7 @@ def get_test_dataframe():
     lk_data_frame = lk_data_frame[RELEVANT_COLUMNS]
 
     return lk_data_frame
+
+
+def perm_to_str(perm):
+    return f"[{' '.join(str(e) for e in perm)}]"

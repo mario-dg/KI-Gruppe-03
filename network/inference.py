@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 from tqdm import tqdm
 from sklearn.preprocessing import MinMaxScaler
-from utils import MEASURES_COLUMNS, get_test_dataframe, get_test_data
+from utils import MEASURES_COLUMNS, get_test_dataframe, get_test_data, perm_to_str
 
 
 MODEL = "models/test_model.h5"
@@ -68,11 +68,11 @@ def run_permutations(lk_df, chosen_features_str):
     permutations = get_permutations(chosen_features_str)
     predict_model = tf.keras.models.load_model(MODEL, compile=True)
     results = []
-    for perm in tqdm(permutations):
+    for perm in tqdm(permutations, total=len(permutations)):
         df = pd.DataFrame.from_dict({'row': perm}, orient='index', columns=MEASURES_COLUMNS)
         results.append(make_prediction(lk_df, df, predict_model))
 
-    return results
+    return results, permutations
 
 
 def make_prediction(lk_df, permutation, model=None):
@@ -126,10 +126,28 @@ def make_prediction(lk_df, permutation, model=None):
     else:
         predict_model = model
 
-    prediction_sequence = predict_model.predict(lk_data_scaled)
+    prediction_sequence = predict_model.predict(lk_data_scaled, verbose=0)
     prediction = np.squeeze(prediction_sequence, axis=0)
     prediction = output_scaler.inverse_transform(prediction)[:, 0]
     return prediction
+
+
+def compare_integrals(results, permutations):
+    integrals = []
+    for incidence, perm in zip(results, permutations):
+        integral = np.trapz(incidence)
+        integrals.append((integral, perm))
+
+    sorted_integrals = sorted(integrals, key=lambda x: x[0])
+    return sorted_integrals[:5]
+
+
+def interpret_permutation_results(perm_results):
+    df = pd.DataFrame.from_dict({f'Top {i + 1}': perm_results[i][1]
+                                 for i in range(len(perm_results))},
+                                orient='index',
+                                columns=MEASURES_COLUMNS)
+    df.to_csv('../test_result.csv')
 
 
 RUN_PERMUTATIONS = True
@@ -137,11 +155,16 @@ RUN_PERMUTATIONS = True
 if __name__ == "__main__":
     if RUN_PERMUTATIONS:
         lk_df = get_test_dataframe()
-        results = np.asarray(run_permutations(lk_df, random.sample(MEASURES_COLUMNS, 4)))
-        for r in results:
-            print(r)
+        results, permutations = run_permutations(lk_df, random.sample(MEASURES_COLUMNS, 4))
+        results = np.asarray(results)
+
         plt.plot(np.transpose(results[0:5, :]))
         plt.show()
+
+        final_perms = compare_integrals(results, permutations)
+        for perm in final_perms:
+            print(perm)
+        interpret_permutation_results(final_perms)
     else:
         lk_df, permutation = get_test_data()
         result = make_prediction(lk_df, permutation)
