@@ -2,12 +2,16 @@ import pandas as pd
 
 
 RELEVANT_COLUMNS = ['confirmed', 'deaths', 'recovered', 'vaccines', 'people_vaccinated', 'people_fully_vaccinated',
-                    'school_closing', 'workplace_closing',
-                    'cancel_events', 'gatherings_restrictions', 'transport_closing', 'stay_home_restrictions',
-                    'internal_movement_restrictions',
+                    'school_closing', 'workplace_closing', 'cancel_events', 'gatherings_restrictions',
+                    'transport_closing', 'stay_home_restrictions', 'internal_movement_restrictions',
                     'international_movement_restrictions', 'information_campaigns', 'testing_policy', 'contact_tracing',
-                    'facial_coverings', 'vaccination_policy',
-                    'elderly_people_protection', 'population', 'cfr', 'cases_per_population', 'incidence']
+                    'facial_coverings', 'vaccination_policy', 'elderly_people_protection', 'population', 'cfr',
+                    'cases_per_population', 'incidence']
+
+MEASURES_COLUMNS = ['school_closing', 'workplace_closing', 'cancel_events', 'gatherings_restrictions',
+                    'transport_closing', 'stay_home_restrictions', 'internal_movement_restrictions',
+                    'international_movement_restrictions', 'information_campaigns', 'testing_policy', 'contact_tracing',
+                    'facial_coverings', 'vaccination_policy', 'elderly_people_protection']
 
 
 def get_test_data():
