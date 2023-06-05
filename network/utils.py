@@ -25,3 +25,12 @@ def get_test_data():
     perm[select.columns] = -1
 
     return lk_data_frame, perm
+
+
+def get_test_dataframe():
+    data_csv = pd.read_csv('../data/clean/df_weekly_incidence.csv')
+    lk_data_full = data_csv[data_csv.administrative_area_level_3 == "LK Ahrweiler"]
+    lk_data_frame = lk_data_full.loc[(lk_data_full.year == 2020) & (lk_data_full.week >= 20) & (lk_data_full.week < 51)]
+    lk_data_frame = lk_data_frame[RELEVANT_COLUMNS]
+
+    return lk_data_frame

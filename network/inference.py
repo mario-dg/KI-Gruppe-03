@@ -3,15 +3,18 @@ import itertools
 import numpy as np
 import pandas as pd
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
-from utils import RELEVANT_COLUMNS, MEASURES_COLUMNS, get_test_data
+from tqdm import tqdm
 from sklearn.preprocessing import MinMaxScaler
+from utils import MEASURES_COLUMNS, get_test_dataframe
 
 
 MODEL = "models/test_model.h5"
+pd.set_option('display.max_columns', None)
 
 
-def make_permutation_predictions(chosen_features_str):
+def get_permutations(chosen_features_str):
     """
     Computes all permutations available for the specified set of Covid measurements
     :param chosen_features_str: List of covid measurements to permute (their identical name in the original dataset)
@@ -42,35 +45,59 @@ def make_permutation_predictions(chosen_features_str):
         for idx, value in zip(chosen_features, permutation):
             features[idx] = value
         # Add to the result.
-        result.append(features)
+        result.append(list(features))
 
-    return permutations
+    return result
 
 
-def make_prediction(lk_df, permutation):
+def run_permutations(lk_df, chosen_features_str):
     """
-        Make a prediction for a given time sequence and given permutation.
-        The last row of the input data is adjusted to use the values of the permutation.
+    Runs inference for all permutations available for the specified set of Covid measurements
 
-        @param lk_df:
-            Type:  Pandas DataFrame
-            Shape: ?x24 (Rows x Columns) | variable number of rows | fixed number of columns:
-            ['confirmed', 'deaths', 'recovered', 'vaccines', 'people_vaccinated','people_fully_vaccinated',
-            'school_closing', 'workplace_closing', 'cancel_events', 'gatherings_restrictions', 'transport_closing',
-            'stay_home_restrictions', 'internal_movement_restrictions', 'international_movement_restrictions',
-            'information_campaigns', 'testing_policy', 'contact_tracing', 'facial_coverings','vaccination_policy',
-            'elderly_people_protection', 'population', 'cfr', 'cases_per_population', 'incidence']
+    :param lk_df:
+        Type:  Pandas DataFrame
+        Shape: ?x24 (Rows x Columns) | variable number of rows | fixed number of columns:
+        ['confirmed', 'deaths', 'recovered', 'vaccines', 'people_vaccinated','people_fully_vaccinated',
+        'school_closing', 'workplace_closing', 'cancel_events', 'gatherings_restrictions', 'transport_closing',
+        'stay_home_restrictions', 'internal_movement_restrictions', 'international_movement_restrictions',
+        'information_campaigns', 'testing_policy', 'contact_tracing', 'facial_coverings','vaccination_policy',
+        'elderly_people_protection', 'population', 'cfr', 'cases_per_population', 'incidence']
+    :param chosen_features_str: List of covid measurements to permute (their identical name in the original dataset)
+    :return: List of predicted incidences for the next 6 weeks, num elements == num permutations
+    """
+    permutations = get_permutations(chosen_features_str)
+    predict_model = tf.keras.models.load_model(MODEL, compile=True)
+    results = []
+    for perm in tqdm(permutations):
+        df = pd.DataFrame.from_dict({'row': perm}, orient='index', columns=MEASURES_COLUMNS)
+        results.append(make_prediction(lk_df, df, predict_model))
 
-        @param permutation:
-            Type: Pandas DataFrame
-            Shape: 1x14 (Rows x Columns)
+    return results
 
-            All columns that should be taken from the original data (from lk_data) have the value -1.
 
-        @return
-            type:  numpy ndarray
-            shape: 6
+def make_prediction(lk_df, permutation, model=None):
+    """
+    Make a prediction for a given time sequence and given permutation.
+    The last row of the input data is adjusted to use the values of the permutation.
 
+    @param lk_df:
+        Type:  Pandas DataFrame
+        Shape: ?x24 (Rows x Columns) | variable number of rows | fixed number of columns:
+        ['confirmed', 'deaths', 'recovered', 'vaccines', 'people_vaccinated','people_fully_vaccinated',
+        'school_closing', 'workplace_closing', 'cancel_events', 'gatherings_restrictions', 'transport_closing',
+        'stay_home_restrictions', 'internal_movement_restrictions', 'international_movement_restrictions',
+        'information_campaigns', 'testing_policy', 'contact_tracing', 'facial_coverings','vaccination_policy',
+        'elderly_people_protection', 'population', 'cfr', 'cases_per_population', 'incidence']
+
+    @param permutation:
+        Type: Pandas DataFrame
+        Shape: 1x14 (Rows x Columns)
+
+        All columns that should be taken from the original data (from lk_data) have the value -1.
+
+    @return
+        type:  numpy ndarray
+        shape: 6
     """
     assert lk_df.shape[1] == 24, "Provided Dataframe does not contain the necessary column count"
     assert permutation.shape == (1, 14), "The number of permutation does not match the number of covid measures"
@@ -94,7 +121,10 @@ def make_prediction(lk_df, permutation):
     lk_data_scaled = input_scaler.fit_transform(lk_data)
     lk_data_scaled = np.expand_dims(lk_data_scaled, axis=0)
 
-    predict_model = tf.keras.models.load_model(MODEL, compile=True)
+    if model is None:
+        predict_model = tf.keras.models.load_model(MODEL, compile=True)
+    else:
+        predict_model = model
 
     prediction_sequence = predict_model.predict(lk_data_scaled)
     prediction = np.squeeze(prediction_sequence, axis=0)
@@ -103,6 +133,9 @@ def make_prediction(lk_df, permutation):
 
 
 if __name__ == "__main__":
-    # make_prediction(*get_test_data())
-    chosen_features = random.sample(MEASURES_COLUMNS, 4)
-    permutations = make_permutation_predictions(chosen_features)
+    lk_df = get_test_dataframe()
+    results = run_permutations(lk_df, random.sample(MEASURES_COLUMNS, 4))
+    for r in results:
+        print(r)
+    plt.plot(results[:5])
+    plt.show()
