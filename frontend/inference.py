@@ -2,6 +2,7 @@ import random
 import itertools
 import numpy as np
 import pandas as pd
+pd.options.mode.chained_assignment = None  # default='warn'
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
@@ -48,7 +49,6 @@ def get_permutations(chosen_features_str):
         result.append(list(features))
 
     return result
-
 
 def run_permutations(lk_df, chosen_features_str):
     """
