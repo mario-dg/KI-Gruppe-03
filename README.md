@@ -77,105 +77,110 @@ Fehlenden Werte sollen durch interpolation ersetzt werden.
 <table class="tg" style="width: 793px;">
 <thead>
 <tr style="height: 23px;">
-<th class="tg-66je" style="height: 23px; width: 30px;">KW</th>
-<th class="tg-66je" style="height: 23px; width: 183px;">Meilenstein</th>
+<th class="tg-66je" style="height: 23px; width: 30.828125px;">KW</th>
+<th class="tg-66je" style="height: 23px; width: 182.171875px;">Meilenstein</th>
 <th class="tg-66je" style="height: 23px; width: 428px;">Actions</th>
-<th class="tg-66je" style="height: 23px; width: 134.515625px;">Bearbeiter</th>
-<th class="tg-66je" style="height: 23px; width: 14.484375px;">Issue</th>
+<th class="tg-66je" style="height: 23px; width: 134px;">Bearbeiter</th>
+<th class="tg-66je" style="height: 23px; width: 14px;">Issue</th>
 </tr>
 </thead>
 <tbody>
 <tr style="height: 143px;">
-<td class="tg-0pky" style="height: 143px; width: 30px;">18</td>
-<td class="tg-0pky" style="height: 143px; width: 183px;">Projektkonzept</td>
+<td class="tg-0pky" style="height: 143px; width: 30.828125px;">18</td>
+<td class="tg-0pky" style="height: 143px; width: 182.171875px;">Projektkonzept</td>
 <td class="tg-0pky" style="height: 143px; width: 428px;">Kl&auml;rung:<br />- Fragestellung<br />- Zielgruppe<br />- Motivation<br />- Daten<br />- Rollen<br />- Methodik</td>
-<td class="tg-0pky" style="height: 143px; width: 134.515625px;">Alle</td>
-<td class="tg-0pky" style="height: 143px; width: 14.484375px;">&nbsp;</td>
+<td class="tg-0pky" style="height: 143px; width: 134px;">Alle</td>
+<td class="tg-0pky" style="height: 143px; width: 14px;">&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
-<td class="tg-0pky" style="height: 112px; width: 30px;" rowspan="4">19</td>
-<td class="tg-de2y" style="height: 46px; width: 183px;" rowspan="2">Projektplan</td>
+<td class="tg-0pky" style="height: 112px; width: 30.828125px;" rowspan="4">19</td>
+<td class="tg-de2y" style="height: 46px; width: 182.171875px;" rowspan="2">Projektplan</td>
 <td class="tg-de2y" style="height: 23px; width: 428px;">Projektplanerstellung im Git-Repo</td>
-<td class="tg-de2y" style="height: 23px; width: 134.515625px;">Kjell, Herberto</td>
-<td class="tg-de2y" style="height: 23px; width: 14.484375px;">&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 134px;">Kjell, Herberto</td>
+<td class="tg-de2y" style="height: 23px; width: 14px;">&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
 <td class="tg-de2y" style="height: 23px; width: 428px;"><span style="font-weight: 400; font-style: normal; text-decoration: none;">ML-Canvas recherche</span></td>
-<td class="tg-de2y" style="height: 23px; width: 134.515625px;">Mario</td>
-<td class="tg-de2y" style="height: 23px; width: 14.484375px;">&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 134px;">Mario</td>
+<td class="tg-de2y" style="height: 23px; width: 14px;">&nbsp;</td>
 </tr>
 <tr style="height: 43px;">
-<td class="tg-de2y" style="height: 66px; width: 183px;" rowspan="2">Explorative Datenanalyse</td>
+<td class="tg-de2y" style="height: 66px; width: 182.171875px;" rowspan="2">Explorative Datenanalyse</td>
 <td class="tg-de2y" style="height: 43px; width: 428px;">Explorative Datenanalyse der Deutschland Covid Daten</td>
-<td class="tg-de2y" style="height: 43px; width: 134.515625px;">Jonathan, Bj&ouml;rn, Steffen</td>
-<td class="tg-de2y" style="height: 43px; width: 14.484375px;">&nbsp;</td>
+<td class="tg-de2y" style="height: 43px; width: 134px;">Jonathan, Bj&ouml;rn, Steffen</td>
+<td class="tg-de2y" style="height: 43px; width: 14px;">&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
 <td class="tg-de2y" style="height: 23px; width: 428px;">Ges&auml;uberte extra Datens&auml;tze</td>
-<td class="tg-de2y" style="height: 23px; width: 134.515625px;">Thomas, Timon</td>
-<td class="tg-de2y" style="height: 23px; width: 14.484375px;">&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 134px;">Thomas, Timon</td>
+<td class="tg-de2y" style="height: 23px; width: 14px;">&nbsp;</td>
 </tr>
-<tr style="height: 23.5px;">
-<td class="tg-0pky" style="height: 56.5px; width: 30px;" rowspan="3">20</td>
-<td class="tg-de2y" style="height: 23.5px; width: 183px;">Zielmetrik</td>
-<td class="tg-de2y" style="height: 23.5px; width: 428px;">
+<tr style="height: 23px;">
+<td class="tg-0pky" style="height: 69px; width: 30.828125px;" rowspan="3">20</td>
+<td class="tg-de2y" style="height: 23px; width: 182.171875px;">Zielmetrik</td>
+<td class="tg-de2y" style="height: 23px; width: 428px;">
 <p>- Eignet sich die Hospitalisierungsrate als Zielmetrik?</p>
 <p>- Welche eignet sich besser?</p>
 <p>- Daten aufbereiten (Auf Landkreisebene, t&auml;glich)&nbsp;</p>
 </td>
-<td class="tg-de2y" style="height: 23.5px; width: 134.515625px;">&nbsp;Bj&ouml;rn, Timon</td>
-<td class="tg-de2y" style="height: 23.5px; width: 14.484375px;"><a href="https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942255">https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942255</a>&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 134px;">&nbsp;Bj&ouml;rn, Timon</td>
+<td class="tg-de2y" style="height: 23px; width: 14px;"><a href="https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942255">https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942255</a>&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
-<td class="tg-de2y" style="height: 33px; width: 183px;">Zielvorstellung des Endproduktes</td>
+<td class="tg-de2y" style="height: 23px; width: 182.171875px;">Zielvorstellung des Endproduktes</td>
 <td class="tg-de2y" style="height: 23px; width: 428px;">
 <p>- Wie k&ouml;nnte&nbsp;das Frontend aussehen? Eingabe/Ausgabe?</p>
 <p>- Recherche zu Einbindung in JupyterNotebook (welche m&ouml;glichkeiten gibt es?)</p>
 <p>- Wie k&ouml;nnte eine automatische Interpretation/Auswertung funktionieren?</p>
 </td>
-<td class="tg-de2y" style="height: 23px; width: 134.515625px;">Herberto, Steffen&nbsp;</td>
-<td class="tg-de2y" style="height: 23px; width: 14.484375px;"><a href="https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27941797">https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27941797</a>&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 134px;">Herberto, Steffen&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 14px;"><a href="https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27941797">https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27941797</a>&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
-<td class="tg-de2y" style="height: 33px; width: 183px;">&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 182.171875px;">&nbsp;</td>
 <td class="tg-de2y" style="height: 23px; width: 428px;">
 <p>Projektupdate</p>
 </td>
-<td class="tg-de2y" style="height: 23px; width: 134.515625px;">Herberto, Kjell</td>
-<td class="tg-de2y" style="height: 23px; width: 14.484375px;"><a href="https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942794">https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942794</a>&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 134px;">Herberto, Kjell</td>
+<td class="tg-de2y" style="height: 23px; width: 14px;"><a href="https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942794">https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942794</a>&nbsp;</td>
 </tr>
 <tr style="height: 43px;">
-<td class="tg-0lax" style="height: 43px; width: 30px;" rowspan="3">21</td>
-<td class="tg-de2y" style="height: 43px; width: 183px;">Funktionsf&auml;higer Prototyp</td>
-<td class="tg-de2y" style="height: 43px; width: 428px;">Training und Verbesserung des random Forests<br />Forent-End/Interface</td>
-<td class="tg-de2y" style="height: 43px; width: 134.515625px;">&nbsp;Mario, Thomas</td>
-<td class="tg-de2y" style="height: 43px; width: 14.484375px;"><a href="https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27941964">https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27941964</a>&nbsp;</td>
+<td class="tg-0lax" style="height: 172.5px; width: 30.828125px;" rowspan="4">21</td>
+<td class="tg-de2y" style="height: 86.5px; width: 182.171875px;" rowspan="2">Funktionsf&auml;higer Prototyp</td>
+<td class="tg-de2y" style="height: 43px; width: 428px;">Training und Verbesserung des&nbsp;LSTM Modells</td>
+<td class="tg-de2y" style="height: 43px; width: 134px;">&nbsp;Mario, Thomas</td>
+<td class="tg-de2y" style="height: 43px; width: 14px;"><a href="https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27941964">https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27941964</a>&nbsp;</td>
+</tr>
+<tr style="height: 43.5px;">
+<td class="tg-de2y" style="height: 43.5px; width: 428px;">Front-End</td>
+<td class="tg-de2y" style="height: 43.5px; width: 134px;">Herberto, Timon</td>
+<td class="tg-de2y" style="height: 43.5px; width: 14px;">&nbsp;</td>
 </tr>
 <tr style="height: 43px;">
-<td class="tg-de2y" style="height: 43px; width: 183px;">EDA</td>
+<td class="tg-de2y" style="height: 43px; width: 182.171875px;">EDA</td>
 <td class="tg-de2y" style="height: 43px; width: 428px;">Auswertung der Vergangenheit</td>
-<td class="tg-de2y" style="height: 43px; width: 134.515625px;">Jonathan, Kjell</td>
-<td class="tg-de2y" style="height: 43px; width: 14.484375px;"><a href="https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942676">https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942676</a></td>
+<td class="tg-de2y" style="height: 43px; width: 134px;">Jonathan, Kjell</td>
+<td class="tg-de2y" style="height: 43px; width: 14px;"><a href="https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942676">https://github.com/users/mario-dg/projects/1/views/1?pane=issue&amp;itemId=27942676</a></td>
 </tr>
 <tr style="height: 43px;">
-<td class="tg-de2y" style="height: 43px; width: 183px;">&nbsp;</td>
+<td class="tg-de2y" style="height: 43px; width: 182.171875px;">&nbsp;</td>
 <td class="tg-de2y" style="height: 43px; width: 428px;">Projektupdate</td>
-<td class="tg-de2y" style="height: 43px; width: 134.515625px;">Herberto, Kjell</td>
-<td class="tg-de2y" style="height: 43px; width: 14.484375px;">&nbsp;</td>
+<td class="tg-de2y" style="height: 43px; width: 134px;">Herberto, Kjell</td>
+<td class="tg-de2y" style="height: 43px; width: 14px;">&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
-<td class="tg-0lax" style="height: 23px; width: 30px;">22</td>
-<td class="tg-de2y" style="height: 23px; width: 183px;">Ergebnisanalyse</td>
+<td class="tg-0lax" style="height: 23px; width: 30.828125px;">22</td>
+<td class="tg-de2y" style="height: 23px; width: 182.171875px;">Ergebnisanalyse</td>
 <td class="tg-de2y" style="height: 23px; width: 428px;">Auswertungerstellung</td>
-<td class="tg-de2y" style="height: 23px; width: 134.515625px;">&nbsp;</td>
-<td class="tg-de2y" style="height: 23px; width: 14.484375px;">&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 134px;">&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 14px;">&nbsp;</td>
 </tr>
 <tr style="height: 23px;">
-<td class="tg-0lax" style="height: 23px; width: 30px;">23</td>
-<td class="tg-de2y" style="height: 23px; width: 183px;">Finale Pr&auml;sentation</td>
+<td class="tg-0lax" style="height: 23px; width: 30.828125px;">23</td>
+<td class="tg-de2y" style="height: 23px; width: 182.171875px;">Finale Pr&auml;sentation</td>
 <td class="tg-de2y" style="height: 23px; width: 428px;">Foliensatzerstellung</td>
-<td class="tg-de2y" style="height: 23px; width: 134.515625px;">&nbsp;</td>
-<td class="tg-de2y" style="height: 23px; width: 14.484375px;">&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 134px;">&nbsp;</td>
+<td class="tg-de2y" style="height: 23px; width: 14px;">&nbsp;</td>
 </tr>
 </tbody>
 </table>
