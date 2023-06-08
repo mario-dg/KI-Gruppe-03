@@ -11,7 +11,8 @@ from sklearn.preprocessing import MinMaxScaler
 from utils import MEASURES_COLUMNS, get_test_dataframe, get_test_data, perm_to_str
 
 
-MODEL = "models/test_model.h5"
+# MODEL = "models/test_model.h5"
+MODEL = "models/main_model.h5"
 pd.set_option('display.max_columns', None)
 
 
@@ -68,6 +69,7 @@ def run_permutations(lk_df, chosen_features_str):
     permutations = get_permutations(chosen_features_str)
     predict_model = tf.keras.models.load_model(MODEL, compile=True)
     results = []
+    
     for perm in tqdm(permutations, total=len(permutations)):
         df = pd.DataFrame.from_dict({'row': perm}, orient='index', columns=MEASURES_COLUMNS)
         results.append(make_prediction(lk_df, df, predict_model))
@@ -126,7 +128,8 @@ def make_prediction(lk_df, permutation, model=None):
     else:
         predict_model = model
 
-    prediction_sequence = predict_model.predict(lk_data_scaled, verbose=0)
+    with tf.device('/cpu:0'):
+        prediction_sequence = predict_model.predict(lk_data_scaled, verbose=0)
     prediction = np.squeeze(prediction_sequence, axis=0)
     prediction = output_scaler.inverse_transform(prediction)[:, 0]
     return prediction
