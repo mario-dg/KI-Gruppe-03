@@ -72,6 +72,14 @@ Fehlenden Werte sollen durch interpolation ersetzt werden.
     - RKI
     - (Bernhard-Nocht-Institut für Tropenmedizin)
 
+## Verwendung
+
+Die Benutzeroberfläche kann mit folgendem Befehl gestartet werden:
+
+```
+python main.py
+```
+
 ## Projektplan
 
 <table class="tg" style="width: 793px;">
