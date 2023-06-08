@@ -1,0 +1,20 @@
+/* Benutzerdefinierte CSS für das Gradio-Interface */
+.gradio {
+  background-color: #2b95e6; /* Hellblau als Hintergrundfarbe */
+  padding: 20px; /* Abstand um das Interface */
+}
+
+.gradio-card {
+  background-color: #9f0909; /* Weiß als Hintergrundfarbe für das Kartenfeld */
+  border-radius: 10px; /* Abgerundete Ecken für das Kartenfeld */
+  padding: 20px; /* Abstand innerhalb des Kartenfelds */
+}
+
+.gradio-inputs,
+.gradio-outputs {
+  margin-bottom: 20px; /* Abstand zwischen den Eingabe- und Ausgabefeldern */
+}
+
+.gradio-interface-footer {
+  font-size: 14px; /* Schriftgröße für den Fußbereich des Interfaces */
+}

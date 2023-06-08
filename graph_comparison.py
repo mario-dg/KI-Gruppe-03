@@ -19,7 +19,6 @@ def compute_graph(df_to_graph: pd.DataFrame):
     ax.legend()
     return fig
 
-
 def compute_diff_graphs(actual_course: pd.DataFrame, alternate_course: pd.DataFrame):
     fig, ax = plt.subplots()
 
@@ -40,7 +39,6 @@ def compute_diff_graphs(actual_course: pd.DataFrame, alternate_course: pd.DataFr
     ax.legend()
     return fig
 
-
 def compute_integral(original_graph: pd.DataFrame, alternative_graph: pd.DataFrame):
     """
     Compute integral
@@ -54,7 +52,6 @@ def compute_integral(original_graph: pd.DataFrame, alternative_graph: pd.DataFra
     incidence_two = alternative_graph['incidence']
     return np.trapz(incidence_one - incidence_two)
 
-
 def main():
     df_hamburg = pd.read_csv('data/Clean/Mockup/df_hamburg.csv')
     df_ahrweiler = pd.read_csv('data/Clean/Mockup/df_ahrweiler.csv')
@@ -62,7 +59,6 @@ def main():
     compute_graph(df_ahrweiler).show()
     compute_diff_graphs(df_hamburg, df_ahrweiler).show()
     print(compute_integral(df_hamburg, df_ahrweiler))
-
 
 if __name__ == '__main__':
     main()
