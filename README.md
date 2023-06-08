@@ -73,7 +73,10 @@ Fehlenden Werte sollen durch interpolation ersetzt werden.
     - (Bernhard-Nocht-Institut für Tropenmedizin)
 
 ## Verwendung
-
+Benötigte Dependencies installieren
+```
+pip install -r requirements.txt
+```
 Die Benutzeroberfläche kann mit folgendem Befehl gestartet werden:
 
 ```
