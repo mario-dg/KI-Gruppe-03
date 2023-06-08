@@ -4,14 +4,14 @@
 
 | Name            | Rolle          |
 |-----------------|----------------|
-| Björn Dittmann  | Allrounder     |
-| Thomas Schaibel | Allrounder     |
-| Timon Rupelt,   | MLOps          |
-| Herberto Werner | Frontend       |
+| Björn Dittmann  |                |
+| Thomas Schaibel |                |
+| Timon Rupelt,   |                |
+| Herberto Werner |                |
 | Mario da Graca  | Projektmanager |
-| Steffen Hespe   | Frontend       |
-| Jonathan Jander | Data Analyst   |
-| Kjell Binici    | Data Analyst   |
+| Steffen Hespe   |                |
+| Jonathan Jander |                |
+| Kjell Binici    |                |
 
 ## Thema
 
@@ -72,12 +72,13 @@ Fehlenden Werte sollen durch interpolation ersetzt werden.
     - RKI
     - (Bernhard-Nocht-Institut für Tropenmedizin)
 
-### Verwendung
-1. Repository klonen
+## Verwendung
+
+Die Benutzeroberfläche kann mit folgendem Befehl gestartet werden:
+
 ```
-git clone https://github.com/mario-dg/KI-Gruppe-03.git
+python main.py
 ```
-2. frontend/gradio_frontend.ipynb ausführen
 
 ## Projektplan
 

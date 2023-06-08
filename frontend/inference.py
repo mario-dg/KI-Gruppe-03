@@ -8,11 +8,11 @@ import matplotlib.pyplot as plt
 
 from tqdm import tqdm
 from sklearn.preprocessing import MinMaxScaler
-from utils import MEASURES_COLUMNS, get_test_dataframe, get_test_data, perm_to_str
+from .utils import MEASURES_COLUMNS, get_test_dataframe, get_test_data, perm_to_str
 
 
 # MODEL = "models/test_model.h5"
-MODEL = "models/main_model.h5"
+MODEL = "frontend/models/main_model.h5"
 pd.set_option('display.max_columns', None)
 
 

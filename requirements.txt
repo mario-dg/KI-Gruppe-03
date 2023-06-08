@@ -1,0 +1,11 @@
+tensorflow
+pandas
+numpy
+geradio
+fsspec 
+scikit-learn
+matplotlib
+tqdm
+IPython
+ipywidgets
+seaborn
